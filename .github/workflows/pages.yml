@@ -53,7 +53,9 @@ jobs:
             if grep -q '黒い仕事靴' /tmp/page.html \
               && grep -q '2026-09-23' /tmp/page.html \
               && grep -q "id:'lo17100'" /tmp/app.js \
-              && grep -q "id:'ao10261'" /tmp/app.js \
+              && grep -q "id:'sd81625'" /tmp/app.js \
+              && grep -q "id:'margot3'" /tmp/app.js \
+              && grep -q "id:'treebreezers'" /tmp/app.js \
               && grep -q "id:'allday301'" /tmp/app.js \
               && grep -q "id:'pansy4060'" /tmp/app.js \
               && grep -q '.lightbox' /tmp/styles.css; then
