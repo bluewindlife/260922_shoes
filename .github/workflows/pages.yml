@@ -36,3 +36,34 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Verify published site
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          set -euo pipefail
+          PAGE_URL="${PAGE_URL%/}/"
+
+          # Pages/CDN may need a short propagation interval after the deployment API reports success.
+          for attempt in {1..12}; do
+            curl -fsSL --retry 3 --retry-delay 2 --retry-all-errors "${PAGE_URL}" -o /tmp/page.html
+            curl -fsSL --retry 3 --retry-delay 2 --retry-all-errors "${PAGE_URL}app.js" -o /tmp/app.js
+            curl -fsSL --retry 3 --retry-delay 2 --retry-all-errors "${PAGE_URL}styles.css" -o /tmp/styles.css
+
+            if grep -q '黒い仕事靴' /tmp/page.html \
+              && grep -q '2026-09-23' /tmp/page.html \
+              && grep -q "id:'lo17100'" /tmp/app.js \
+              && grep -q "id:'ao10261'" /tmp/app.js \
+              && grep -q "id:'allday301'" /tmp/app.js \
+              && grep -q "id:'pansy4060'" /tmp/app.js \
+              && grep -q '.lightbox' /tmp/styles.css; then
+              echo "Published site verification succeeded: ${PAGE_URL}"
+              exit 0
+            fi
+
+            echo "Published content not current yet (attempt ${attempt}/12)."
+            sleep 5
+          done
+
+          echo "Published site did not expose the current deployment in time." >&2
+          exit 1
