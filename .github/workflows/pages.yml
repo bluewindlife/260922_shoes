@@ -102,10 +102,10 @@ jobs:
 
             const cards = page.locator('.product-card');
             const cardCount = await cards.count();
-            if (cardCount !== 12) throw new Error(`Expected 12 product cards, got ${cardCount}`);
+            if (cardCount !== 13) throw new Error(`Expected 13 product cards, got ${cardCount}`);
 
             const candidateCount = await page.locator('#candidateList .product-card').count();
-            if (candidateCount !== 11) throw new Error(`Expected 11 candidates, got ${candidateCount}`);
+            if (candidateCount !== 12) throw new Error(`Expected 12 candidates, got ${candidateCount}`);
 
             // Main product image should render for every card, or the designed fallback must be visible.
             const imageStates = await cards.evaluateAll(nodes => nodes.map(node => {
