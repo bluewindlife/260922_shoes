@@ -76,7 +76,53 @@
       reviews:[]
     },
     {
-      id:'ao10239', rank:3,
+      id:'sd81625', rank:3,
+      brand:'maRe maRe', title:'カラフルリボンフラット', code:'SD81625',
+      price:'¥6,600', status:'販売ページあり／サイズ別在庫は購入時確認',
+      heel:'約2.5cm', width:'EEタイプ', sizes:'22.0–26.0cm', weight:'—', toe:'ラウンド／バレエ',
+      confidence:'評価確度：高（7451同ラスト）',
+      url:'https://voi.0101.co.jp/voi/wsg/wrt-5_mcd-CC009_cpg-207_pno-68_ino-01.html',
+      reviewUrl:'https://voi.0101.co.jp/voi/wsg/wrt-5_mcd-CC009_cpg-207_pno-68_ino-01.html',
+      images:[
+        {label:'公式・商品', alt:'maRe maRe SD81625 ブラック', sources:['https://image.0101.co.jp/16622/img/cc00920768/sd81625-15_800_18.jpg?basethum=800']}
+      ],
+      ratings:{heel:7.5,fatigue:8.0,forefoot:8.5,cushion:7.5,softness:8.5,stability:7.5},
+      diffs:{heel:'↑',fatigue:'→',forefoot:'→',cushion:'→',softness:'→',stability:'→'},
+      compare:'7451と同じラスト。横幅・基本的な足入れを近づけつつ、深い甲で脱げにくさ改善を狙える。',
+      fit:'販売ページがSD007451と同じラストの使用を明記。さらに「甲部分が見た目より深く脱げにくい」と説明しており、7451に近い履き心地を維持しながら保持性が変わる可能性がある。',
+      good:'約2.5cm、EEタイプ、日本製。同ラストという今回だけの強い比較材料があり、見た目もバレエ／フラット系で自然。',
+      caution:'同じラストでもアッパー素材・甲の深さは異なるため「7451と完全に同じ履き心地」とは断定できない。7451の踵形状との相性問題が残る可能性もある。',
+      reviews:[
+        {text:'普段23.5〜24.0cm（24cm寄り）の購入者は23.5cmでぴったりで、履きやすく歩きやすいため履きつぶして買い直していると報告。', source:'マルイウェブチャネル購入者レビュー', url:'https://voi.0101.co.jp/voi/wsg/wrt-5_mcd-CC009_cpg-207_pno-68_ino-01.html'},
+        {text:'普段24.0cm・標準幅の購入者は24.0cmで履き心地が良かったと評価。', source:'マルイウェブチャネル購入者レビュー', url:'https://voi.0101.co.jp/voi/wsg/wrt-5_mcd-CC009_cpg-207_pno-68_ino-01.html'}
+      ]
+    },
+    {
+      id:'margot3', rank:4,
+      brand:'VIVAIA', title:'Margot 3.0 スクエアトゥ フラット', code:'shflatse2509150037001',
+      price:'¥18,900', status:'販売中／サイズ別在庫は公式で確認',
+      heel:'1.0cm', width:'80mm (EU37)／E〜4E目安', sizes:'22.0–27.5cm', weight:'約153g (EU37 / 23.5cm)', toe:'スクエア',
+      confidence:'評価確度：高（公式構造＋サイズ指針）',
+      url:'https://vivaia.jp/products/flats-margot3-black',
+      reviewUrl:'https://vivaia.jp/pages/sizelist',
+      images:[
+        {label:'公式・商品', alt:'VIVAIA Margot 3.0 ブラック', sources:['https://cdn.shopify.com/s/files/1/0532/3063/3157/files/1769999492-f0e17d80-dbfc-4857-9827-562b33075c7c.jpg?crop=center&height=1000&v=1770010314&width=1000']},
+        {label:'公式・横', alt:'VIVAIA Margot 3.0 ブラック 横', sources:['https://cdn.shopify.com/s/files/1/0532/3063/3157/files/1769999492-7323d5d4-4e6c-49d9-8449-29341afa6cb5.jpg?crop=center&height=1000&v=1770010314&width=1000']},
+        {label:'公式・かかと', alt:'VIVAIA Margot 3.0 ブラック かかと', sources:['https://cdn.shopify.com/s/files/1/0532/3063/3157/files/1769999492-94d1e7fd-cc2f-4abe-9e80-85bdecd07278.jpg?crop=center&height=1000&v=1770010314&width=1000']}
+      ],
+      ratings:{heel:9.0,fatigue:9.0,forefoot:9.0,cushion:9.0,softness:9.0,stability:8.5},
+      diffs:{heel:'↑↑',fatigue:'↑',forefoot:'↑',cushion:'↑↑',softness:'→',stability:'↑'},
+      compare:'幅広対応だけでなく270°かかとパッドで「パカパカ」を直接対策。サイズ合わせまで公式手順がある。',
+      fit:'Margot 3.0は270° U-Cloudかかとパッドでアキレス腱周辺を両側から保持し、歩行中のズレ・浮きを抑える設計。Margot 2.0比で前足部も約5%広い。',
+      good:'前足部EVAのクッション性約20%向上、アーチサポート約10%向上、反発性約15%向上。約153gと軽く、通勤・長時間歩行向けの説明もある。',
+      caution:'VIVAIA公式もサイズ合わせを重視。購入前に足を正しく測り、普段使う靴下で試着し、つま先1〜1.5cm程度の余裕とかかと抜けを確認。かかとに指が1本入る場合はサイズダウンを推奨している。ワイドだから大きめを選ぶ、とはしない。',
+      reviews:[
+        {text:'VIVAIA公式サイズガイドは、足を正しく測ったうえで普段履く靴下で試し、つま先余裕とかかと抜けを確認する手順を案内している。', source:'VIVAIA公式 サイズ選びのポイント', url:'https://vivaia.jp/pages/sizelist'},
+        {text:'公式Q&Aでは、Margot 3.0の270° U-Cloudかかとパッドが、かかとのフィット感を高めズレを抑えると説明している。', source:'VIVAIA公式 Margot 3.0紹介', url:'https://vivaia.jp/pages/blog-margot-3-wide-fit-bunion-friendly-new'}
+      ]
+    },
+    {
+      id:'ao10239', rank:5,
       brand:'AcureZ / ASICS Trading', title:'AO-10239', code:'AO-10239',
       price:'通常 ¥7,425（調査時セール ¥5,775）', status:'アウトレット／サイズ別在庫は公式で確認',
       heel:'約3.0cm', width:'3E相当', sizes:'22.5–24.5cm（公式表示）', weight:'約185g (23.0cm)', toe:'ポインテッド',
@@ -94,49 +140,6 @@
       good:'立体成型インソール、EVAによる軽量化、反発性EVAアウトソール、柔らかなライニング、生活防水。',
       caution:'ポインテッドトゥのため、横幅が3Eでもつま先・爪の圧迫は別途確認が必要。具体的な日本語レビュー本文は十分確認できず。',
       reviews:[]
-    },
-    {
-      id:'ao10261', rank:4,
-      brand:'AcureZ / ASICS Trading', title:'AO-10261', code:'AO-10261',
-      price:'通常 ¥7,920（調査時セール ¥6,160）', status:'アウトレット／サイズ別在庫は公式で確認',
-      heel:'約3.0cm', width:'3E相当', sizes:'22.0–26.5cm', weight:'約210g (23.0cm)', toe:'ローファー／ラウンド系',
-      confidence:'評価確度：中〜高（構造根拠が強い）',
-      url:'https://www.asics-trading.co.jp/shop/g/g0730008220/',
-      reviewUrl:'',
-      images:[
-        {label:'公式・商品', alt:'AcureZ AO-10261 ブラック', sources:['https://www.asics-trading.co.jp/img/goods/L/AO-10261_008.jpg']}
-      ],
-      ratings:{heel:9.0,fatigue:9.0,forefoot:9.0,cushion:8.5,softness:9.0,stability:9.0},
-      diffs:{heel:'↑↑',fatigue:'↑',forefoot:'↑',cushion:'↑',softness:'→',stability:'↑↑'},
-      compare:'甲を覆うローファー形状＋踵パッドで前後移動を抑えやすい。',
-      fit:'母趾側にゆとりを持たせた3Eラストに加え、踵部分にパッドを入れて踵抜けへ配慮。甲側でも保持するローファー形状。',
-      good:'立体EVAサポート中敷、スポンジ入りジャージ内装、反発性EVAアウトソール、屈曲性、生活防水。',
-      caution:'パンプス／バレエより見た目がローファー寄り。具体的な日本語購入者レビュー本文は十分確認できず。',
-      reviews:[]
-    },
-    {
-      id:'pedala1212a116', rank:5,
-      brand:'ASICS WALKING / PEDALA', title:'ペダラ レディース 3E', code:'1212A116-001',
-      price:'¥27,500', status:'24.0/24.5cm 在庫表示あり（調査時）',
-      heel:'3.0cm', width:'3E', sizes:'22.0–25.0cm', weight:'—', toe:'オブリーク',
-      confidence:'評価確度：高',
-      url:'https://walking.asics.com/items/1212A116-001',
-      reviewUrl:'https://walking.asics.com/items/1212A116-001',
-      images:[
-        {label:'公式・商品', alt:'PEDALA 1212A116-001 ブラック', sources:['https://walking.asics.com/images/item/1212A116-001/1212A116-001_c001_a001_pm.jpg']},
-        {label:'公式・別角度', alt:'PEDALA 1212A116-001 ブラック 別角度', sources:['https://walking.asics.com/images/item/1212A116-001/1212A116-001_c001_a003_pm.jpg']}
-      ],
-      ratings:{heel:9.0,fatigue:9.5,forefoot:9.0,cushion:9.5,softness:8.5,stability:9.5},
-      diffs:{heel:'↑↑',fatigue:'↑↑',forefoot:'↑',cushion:'↑↑',softness:'→',stability:'↑↑'},
-      compare:'長時間疲労・クッション・安定性を大幅強化。見た目はスニーカー寄り。',
-      fit:'パンプスではなく明確にスニーカー寄りだが、長時間通勤の「履き心地上限」を見る比較対象。サイドファスナーで着脱できる。',
-      good:'SOLYTEミッドソール＋踵GEL＋中足部トラスティック。3Eオブリークラストで長時間歩行向けの構成が充実。',
-      caution:'見た目は他候補よりスニーカー寄り。価格も高い。ただし価格は履き心地評価に含めていない。',
-      reviews:[
-        {text:'23.5cm利用者から、ほぼ毎日・一日中履いても疲れにくく、軽く歩きやすいとの報告。', source:'ASICS WALKING公式購入者レビュー', url:'https://walking.asics.com/items/1212A116-001'},
-        {text:'足幅が広めで靴選びに悩んでいた購入者が、フィットとファスナー着脱を評価。', source:'ASICS WALKING公式購入者レビュー', url:'https://walking.asics.com/items/1212A116-001'},
-        {text:'24.0cm利用者から、クッション性と幅のゆとり、疲れにくさを評価する声がある。', source:'ASICS WALKING公式購入者レビュー', url:'https://walking.asics.com/items/1212A116-001'}
-      ]
     },
     {
       id:'ao10259', rank:6,
@@ -266,6 +269,27 @@
         {text:'公式店購入者から、かかとが柔らかく靴擦れしなかったとの報告がある一方、普段サイズでは少し大きく感じたという声もある。', source:'Yahoo! Belle&Sofa公式店レビュー', url:'https://store.shopping.yahoo.co.jp/yasashii-kutukoubou/y646.html'},
         {text:'幅広特注の購入者レビューでは、柔らかさや痛みにくさを評価する声がある。', source:'楽天・Belle&Sofa購入者レビュー', url:'https://review.rakuten.co.jp/item/1/245295_10000669/1.1/'}
       ]
+    },
+    {
+      id:'treebreezers', rank:12,
+      brand:'Allbirds', title:'Tree Breezers', code:'ABW240063 / Jet Black',
+      price:'通常 ¥15,950（調査時 ¥11,165・30%OFF）', status:'Jet Black 24.0/24.5cm 在庫あり（調査時）',
+      heel:'ほぼフラット', width:'幅表記なし・伸縮ニット', sizes:'22.0–28.0cm', weight:'—', toe:'バレエ／ラウンド寄り',
+      confidence:'評価確度：中',
+      url:'https://www.goldwin.co.jp/ap/item/i/m/ABW240063',
+      reviewUrl:'',
+      images:[
+        {label:'公式・横', alt:'Allbirds Tree Breezers Jet Black 横', sources:['https://itemimg.goldwin.co.jp/itemimg/GDW22/A0GDW0001GXY/02_AO01-432.jpg']},
+        {label:'公式・斜め', alt:'Allbirds Tree Breezers Jet Black 斜め', sources:['https://itemimg.goldwin.co.jp/itemimg/GDW22/A0GDW0001GXY/03_051-432.jpg']},
+        {label:'公式・上', alt:'Allbirds Tree Breezers Jet Black 上', sources:['https://itemimg.goldwin.co.jp/itemimg/GDW22/A0GDW0001GXY/03_052-432.jpg']}
+      ],
+      ratings:{heel:7.5,fatigue:8.0,forefoot:8.0,cushion:8.0,softness:9.5,stability:7.5},
+      diffs:{heel:'↑',fatigue:'→',forefoot:'→',cushion:'↑',softness:'↑',stability:'→'},
+      compare:'見た目は自然なバレエフラット。伸縮ニットで足には追従するが、専用の踵保持構造は明示されていない。',
+      fit:'ユーカリ由来の伸縮メッシュを公式が「靴下を履いているように足にぴったりフィット」と説明。仕事用途も公式に挙げられている。',
+      good:'SweetFoam EVAミッドソール、通気性の高いニット、柔らかな足当たり。Jet Blackはアッパーからソールまで黒で、今回の見た目条件に合う。',
+      caution:'日本公式では現在、製品レビュー・スタッフレビューが未掲載。かかと抜け改善の確度はSGT606やMargot 3.0より低いため、24.0/24.5cmを実際に比較したい。',
+      reviews:[]
     }
   ];
 
@@ -277,18 +301,23 @@
     },
     {
       name:'VIVAIA Tila エクストラワイド',
-      reason:'前足部の余裕とかかとパッドは魅力だが、今回は横幅不足が主課題ではない。ソールの薄さを長距離歩行の弱点とする日本語レビューもあり、長時間通勤では優先度を下げた。',
+      reason:'前足部の余裕とかかとパッドは魅力。ただし7451では横幅不足が主課題ではないため、87mmの非常に広いつま先幅より、踵保持とサイズ指針が強化されたMargot 3.0を優先した。',
       url:'https://vivaia.jp/products/flats-tila-black'
     },
     {
       name:'VIVAIA Margot 2.0 Wide',
-      reason:'非常に広い設計は幅広足には有効だが、7451で横幅が合っている今回には靴内部の余裕を増やし、前後移動・踵浮きを悪化させる可能性を重視。',
+      reason:'最大5E級の広さは幅広足には有効だが、今回には内部容積が余りすぎる可能性がある。270°かかとパッドを備えるMargot 3.0を優先。',
       url:'https://vivaia.jp/products/flats-margot2wide-black'
     },
     {
-      name:'Allbirds Tree Breezers',
-      reason:'伸縮ニットと柔らかさは魅力だが、今回の判断に使える日本語の踵保持・24.0/24.5cm境界レビューが不足。より根拠が明確な候補を優先した。',
-      url:'https://www.goldwin.co.jp/ap/item/i/m/ABW240063'
+      name:'AcureZ AO-10261',
+      reason:'3E・踵パッド・甲を覆う構造は機能的に有力だが、見た目がローファー寄り。今回のパンプス／バレエ／フラット系という外観条件から主候補を外した。',
+      url:'https://www.asics-trading.co.jp/shop/g/g0730008220/'
+    },
+    {
+      name:'ASICS WALKING / PEDALA 1212A116-001',
+      reason:'長時間歩行性能は非常に強いが、外観がウォーキングシューズ／スニーカー寄り。履き心地上限の参考にはなるものの、今回の仕事用フラット候補からは外した。',
+      url:'https://walking.asics.com/items/1212A116-001'
     },
     {
       name:'Lady worker LO-17130',
@@ -314,11 +343,6 @@
       name:'fitfit メッシュバレエスニーカーLITE',
       reason:'歩行性能は魅力だが、公称ヒール4.0cmのため候補外。',
       url:'https://fitfit.jp/commodity/SFIT0841D/FI5856BW010915/'
-    },
-    {
-      name:'maRe maRe カラフルリボンフラット SD81625',
-      reason:'SD007451と同じラストという販売情報があり再現性は高いが、今回改善したい前後の緩さ・かかと抜けを大きく変えにくい可能性があるため主候補から外した。',
-      url:'https://voi.0101.co.jp/voi/wsg/wrt-5_mcd-CC009_cpg-207_pno-68_ino-01.html'
     },
     {
       name:'MOONSTAR SUGATA MS SGT501',
@@ -391,7 +415,7 @@
         '<div class="notes-grid"><div class="note-box good"><strong>適合ポイント</strong><p>' + item.good + '</p></div><div class="note-box caution"><strong>要確認</strong><p>' + item.caution + '</p></div></div>' +
         reviewsMarkup(item) +
         '<div class="link-row"><a class="product-link" href="' + item.url + '" target="_blank" rel="noopener noreferrer">公式ページを見る</a>' +
-        (item.reviewUrl && item.reviewUrl !== item.url ? '<a class="product-link secondary" href="' + item.reviewUrl + '" target="_blank" rel="noopener noreferrer">レビュー元を見る</a>' : '') +
+        (item.reviewUrl && item.reviewUrl !== item.url ? '<a class="product-link secondary" href="' + item.reviewUrl + '" target="_blank" rel="noopener noreferrer">レビュー／参考情報を見る</a>' : '') +
         '</div>' +
       '</div></article>';
   }
