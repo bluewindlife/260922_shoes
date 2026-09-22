@@ -67,3 +67,140 @@ jobs:
 
           echo "Published site did not expose the current deployment in time." >&2
           exit 1
+
+
+      - name: Mobile browser smoke test
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          set -euo pipefail
+          npm install --no-save --no-package-lock playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+          cat > /tmp/smoke.cjs <<'EOF'
+          const { chromium } = require('playwright');
+
+          (async () => {
+            const url = process.env.PAGE_URL;
+            const browser = await chromium.launch({ headless: true });
+            const page = await browser.newPage({
+              viewport: { width: 390, height: 844 },
+              isMobile: true,
+              hasTouch: true,
+              deviceScaleFactor: 3
+            });
+
+            const pageErrors = [];
+            page.on('pageerror', error => pageErrors.push(error.message));
+
+            const response = await page.goto(url, { waitUntil: 'networkidle', timeout: 90000 });
+            if (!response || !response.ok()) {
+              throw new Error(`Published page HTTP failure: ${response ? response.status() : 'no response'}`);
+            }
+
+            await page.waitForSelector('.product-card', { timeout: 30000 });
+
+            const cards = page.locator('.product-card');
+            const cardCount = await cards.count();
+            if (cardCount !== 12) throw new Error(`Expected 12 product cards, got ${cardCount}`);
+
+            const candidateCount = await page.locator('#candidateList .product-card').count();
+            if (candidateCount !== 11) throw new Error(`Expected 11 candidates, got ${candidateCount}`);
+
+            // Main product image should render for every card, or the designed fallback must be visible.
+            const imageStates = await cards.evaluateAll(nodes => nodes.map(node => {
+              const img = node.querySelector('.product-main-image');
+              const fallback = node.querySelector('.image-fallback');
+              const media = node.querySelector('.product-media');
+              return {
+                id: node.dataset.id,
+                loaded: !!img && img.complete && img.naturalWidth > 0,
+                fallback: !!media && media.classList.contains('is-error') &&
+                  !!fallback && getComputedStyle(fallback).display !== 'none'
+              };
+            }));
+            const badImages = imageStates.filter(x => !x.loaded && !x.fallback);
+            if (badImages.length) throw new Error(`Image neither loaded nor fallback: ${JSON.stringify(badImages)}`);
+
+            // Thumbnail switching on baseline: second official image must replace the main image.
+            const baseline = page.locator('[data-id="sd007451"]');
+            const baselineThumbs = baseline.locator('.thumb');
+            if (await baselineThumbs.count() < 2) throw new Error('Baseline thumbnail gallery is incomplete');
+            const beforeSrc = await baseline.locator('.product-main-image').getAttribute('src');
+            await baselineThumbs.nth(1).click();
+            await page.waitForTimeout(500);
+            const afterSrc = await baseline.locator('.product-main-image').getAttribute('src');
+            if (!afterSrc || afterSrc === beforeSrc) throw new Error('Thumbnail switching did not update the main image');
+
+            // Lightbox and touch pinch gesture.
+            await baseline.locator('.product-main-button').click();
+            const lightbox = page.locator('#lightbox');
+            if (await lightbox.getAttribute('hidden') !== null) throw new Error('Lightbox did not open');
+
+            const pinchTransform = await page.evaluate(() => {
+              const stage = document.querySelector('.lightbox-stage');
+              const img = document.querySelector('#lightboxImage');
+              const mkTouch = (id, x, y) => new Touch({
+                identifier: id, target: stage, clientX: x, clientY: y,
+                pageX: x, pageY: y, screenX: x, screenY: y
+              });
+              const startTouches = [mkTouch(1, 120, 400), mkTouch(2, 220, 400)];
+              stage.dispatchEvent(new TouchEvent('touchstart', {
+                bubbles: true, cancelable: true, touches: startTouches,
+                targetTouches: startTouches, changedTouches: startTouches
+              }));
+              const moveTouches = [mkTouch(1, 70, 400), mkTouch(2, 270, 400)];
+              stage.dispatchEvent(new TouchEvent('touchmove', {
+                bubbles: true, cancelable: true, touches: moveTouches,
+                targetTouches: moveTouches, changedTouches: moveTouches
+              }));
+              return img.style.transform;
+            });
+            if (!/scale\((?:1\.[1-9]|[2-4])/.test(pinchTransform)) {
+              throw new Error(`Pinch zoom transform not applied: ${pinchTransform}`);
+            }
+
+            await page.locator('.lightbox-close').click();
+            if (await lightbox.getAttribute('hidden') === null) throw new Error('Lightbox did not close');
+
+            // External links must open safely.
+            const badLinks = await page.locator('a[target="_blank"]').evaluateAll(links =>
+              links.filter(a => {
+                const rel = (a.getAttribute('rel') || '').split(/\s+/);
+                return !rel.includes('noopener') || !rel.includes('noreferrer') || !a.href;
+              }).map(a => a.href)
+            );
+            if (badLinks.length) throw new Error(`Unsafe external links: ${JSON.stringify(badLinks)}`);
+
+            // Comparison table must be horizontally scrollable on mobile.
+            const comparison = page.locator('.comparison-wrap');
+            const scrollable = await comparison.evaluate(el =>
+              el.scrollWidth > el.clientWidth && ['auto','scroll'].includes(getComputedStyle(el).overflowX)
+            );
+            if (!scrollable) throw new Error('Comparison table is not horizontally scrollable on mobile');
+
+            // Explicitly trigger a broken image and confirm the designed fallback appears.
+            const fallbackOk = await page.evaluate(async () => {
+              const card = document.querySelector('[data-id="sd007451"]');
+              const img = card.querySelector('.product-main-image');
+              const media = card.querySelector('.product-media');
+              img.src = 'https://example.invalid/forced-image-failure.jpg';
+              await new Promise(resolve => setTimeout(resolve, 800));
+              const fallback = card.querySelector('.image-fallback');
+              return media.classList.contains('is-error') &&
+                getComputedStyle(fallback).display !== 'none';
+            });
+            if (!fallbackOk) throw new Error('Image fallback did not appear after a forced load failure');
+
+            if (pageErrors.length) throw new Error(`Page JavaScript errors: ${JSON.stringify(pageErrors)}`);
+
+            console.log('Mobile browser smoke test passed.');
+            console.log(JSON.stringify({ cardCount, candidateCount, imageStates, pinchTransform }));
+            await browser.close();
+          })().catch(error => {
+            console.error(error);
+            process.exit(1);
+          });
+          EOF
+
+          NODE_PATH="$PWD/node_modules" node /tmp/smoke.cjs
