@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f5f1">
+  <meta name="description" content="maRe maRe SD007451を基準に、通勤・長時間使用向けの黒いパンプス／フラットシューズを履き心地で比較する個人カタログ。">
+  <title>黒い仕事靴｜履き心地カタログ</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="hero shell">
+    <p class="eyebrow">BLACK WORK SHOES CATALOG</p>
+    <h1>黒い仕事靴、<br>履き心地から選ぶ。</h1>
+    <p class="lead">いま履いている <strong>maRe maRe SD007451</strong> を基準に、通勤・仕事で長時間履ける候補を比較。</p>
+    <div class="hero-chips" aria-label="選定条件">
+      <span>黒アッパー</span><span>長時間通勤</span><span>幅広め</span><span>ヒール≤3cm</span><span>薄手ソックス／タイツ</span>
+    </div>
+    <p class="hero-note">評価は公式仕様・構造と信頼できる日本語レビューからの推定です。実試着の結果ではありません。</p>
+  </header>
+
+  <main>
+    <section class="baseline shell" aria-labelledby="baseline-title">
+      <div class="section-heading">
+        <p class="eyebrow">BASELINE</p>
+        <h2 id="baseline-title">現在の基準</h2>
+        <p>横幅はほぼ合っている一方、前後方向に少し余裕があり、かかとの抜け・靴ずれが課題。</p>
+      </div>
+      <div id="baselineCard"></div>
+    </section>
+
+    <section class="candidates shell" aria-labelledby="candidate-title">
+      <div class="section-heading">
+        <p class="eyebrow">CANDIDATES</p>
+        <h2 id="candidate-title">乗り換え候補</h2>
+        <p>総合点は付けず、履き心地を6項目で個別評価。掲載順は今回の条件への適合度をもとにした候補順です。</p>
+      </div>
+      <div id="candidateList" class="card-list"></div>
+    </section>
+
+    <section class="excluded shell" aria-labelledby="excluded-title">
+      <div class="section-heading">
+        <p class="eyebrow">SCREENED OUT</p>
+        <h2 id="excluded-title">検討したが候補外</h2>
+        <p>履き心地は良さそうでも、今回の条件から外れたモデルを記録。</p>
+      </div>
+      <div id="excludedList" class="excluded-list"></div>
+    </section>
+
+    <section class="comparison" aria-labelledby="comparison-title">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">SUMMARY</p>
+          <h2 id="comparison-title">最後に一覧比較</h2>
+          <p>点数は10点満点の推定値。価格は評価点に含めていません。</p>
+        </div>
+        <div id="comparisonTable" class="comparison-wrap"></div>
+      </div>
+    </section>
+
+    <section class="checklist shell" aria-labelledby="check-title">
+      <div class="section-heading">
+        <p class="eyebrow">BEFORE BUYING</p>
+        <h2 id="check-title">購入前チェック</h2>
+      </div>
+      <div class="check-card">
+        <label><input type="checkbox"> 左右それぞれの足長を立位で実測する</label>
+        <label><input type="checkbox"> 24.0cm / 24.5cm の両方を比較できるなら試す</label>
+        <label><input type="checkbox"> 歩行時にかかとが浮かないか確認する</label>
+        <label><input type="checkbox"> かかと・履き口に擦れが出ないか確認する</label>
+        <label><input type="checkbox"> 薄手ソックス／冬用タイツの両方を想定する</label>
+        <label><input type="checkbox"> 室内で10〜15分歩いて前足部・爪・足裏を確認する</label>
+      </div>
+    </section>
+
+    <section class="method shell">
+      <details>
+        <summary>評価方法と注意点</summary>
+        <div class="method-body">
+          <p>「かかと保持」「長時間疲労」「前足部・横幅」「クッション」「足当たり」「歩行安定性」を独立して10点満点で評価しています。総合点への合算はしていません。</p>
+          <p>点数はメーカーの構造説明、幅・ヒール・重量などの仕様、日本語の購入者レビューを材料にした比較用の推定値です。足型との相性が最終結果を大きく左右します。</p>
+          <p>在庫・価格は2026年9月22日の調査時点を基本にしています。販売終了・再入荷で変わるため、購入時に公式ページで再確認してください。</p>
+          <p>商品画像は各ブランド／メーカーの公式公開画像を参照し、画像自体の権利は各権利者に帰属します。</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <p>個人利用の非営利比較カタログ。最終更新：2026-09-22</p>
+    <p>商品仕様・価格・画像・レビューは各メーカー公式サイトおよび明記したレビュー元を参照。</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="商品画像を拡大表示">
+    <button class="lightbox-close" type="button" aria-label="閉じる">×</button>
+    <div class="lightbox-stage"><img id="lightboxImage" alt="" draggable="false"></div>
+    <p class="lightbox-hint">2本指で拡大できます</p>
+  </div>
+</body>
+</html>
